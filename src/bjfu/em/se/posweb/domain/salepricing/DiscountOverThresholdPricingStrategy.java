@@ -12,7 +12,7 @@ public class DiscountOverThresholdPricingStrategy implements
 	private int threshold;
 	private int discount;
 	@Override
-	public int getTotal(Sale s) {
+	public int calculate(Sale s) {
 		int total=s.getPreDiscountTotal();
 		int discountTimes=total/threshold;
 		return total-discountTimes*discount;

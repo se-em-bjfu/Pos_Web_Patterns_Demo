@@ -23,7 +23,7 @@ public class AbsoluteDiscountOverThresholdPricingStrategy implements
 	}
 
 	@Override
-	public int getTotal(Sale s) {
+	public int calculate(Sale s) {
 		int total=s.getPreDiscountTotal();
 		if (total>=threshold)
 			return total-discount;

@@ -13,7 +13,7 @@ public interface ISalePricingStrategy {
 	 * @param s
 	 * @return
 	 */
-	int getTotal(Sale s);
+	int calculate(Sale s);
 	/**
 	 * 获取策略名称
 	 * @return

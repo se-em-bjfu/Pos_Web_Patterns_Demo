@@ -22,7 +22,7 @@ public class MakePaymentServlet extends HttpServlet {
 			int change=register.makePayment(amount, type);
 			
 			request.setAttribute("change", change);
-			request.setAttribute("total", register.getCurrentSale().getTotal());
+			request.setAttribute("total", register.getCurrentSale().getDiscountedTotal());
 			request.setAttribute("amount", amount);
 			request.getRequestDispatcher("/WEB-INF/jsp/paymentok.jsp").forward(request, response);
 		} catch (Exception e) {

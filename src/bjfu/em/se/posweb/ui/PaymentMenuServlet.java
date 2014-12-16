@@ -22,7 +22,7 @@ public class PaymentMenuServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Register register=(Register)(request.getSession().getAttribute("register"));
-		request.setAttribute("total", register.getCurrentSale().getTotal());
+		request.setAttribute("total", register.getCurrentSale().getDiscountedTotal());
 		request.setAttribute("paymentTypes", PaymentType.values());
 		request.getRequestDispatcher("/WEB-INF/jsp/payment.jsp").forward(request, response);
 	}

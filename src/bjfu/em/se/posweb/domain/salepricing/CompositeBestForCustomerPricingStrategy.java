@@ -11,10 +11,10 @@ public class CompositeBestForCustomerPricingStrategy extends
 		CompositePricingStrategy {
 
 	@Override
-	public int getTotal(Sale s) {
+	public int calculate(Sale s) {
 		int min=s.getPreDiscountTotal();
 		for (ISalePricingStrategy strategy:strategies) {
-			int price=strategy.getTotal(s);
+			int price=strategy.calculate(s);
 			if (price<min) {
 				min=price;
 			}

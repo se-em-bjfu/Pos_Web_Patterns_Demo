@@ -48,12 +48,15 @@ public class Sale {
 		isComplete=true;		
 	}
 	
-	
-	public int getTotal(){
-		return pricingStrategy.getTotal(this);
+	/**
+	 * 获取折后总价
+	 * @return
+	 */
+	public int getDiscountedTotal(){
+		return pricingStrategy.calculate(this);
 	}
 	/**
-	 * 获取总价
+	 * 获取折前总价
 	 * @return
 	 */
 	public int getPreDiscountTotal() {
@@ -73,10 +76,10 @@ public class Sale {
 	 * @throws PaymentNotEnoughException 所付金额不足
 	 */
 	int makePayment(int amount, String type) throws WrongPaymentTypeException, PaymentNotEnoughException {
-		int change=amount-getTotal();
+		int change=amount-getDiscountedTotal();
 		if (change<0) {
 			throw new PaymentNotEnoughException(
-				String.format("所付金额%.2f不足,需要%.2f",amount,getTotal()));
+				String.format("所付金额%.2f不足,需要%.2f",amount,getDiscountedTotal()));
 		}
 		payment=PaymentFactory.createPayment(amount, type);
 		return change;
@@ -100,7 +103,7 @@ public class Sale {
 	 * @return
 	 */
 	public int getChange() {
-		return payment.getAmount()-getTotal();
+		return payment.getAmount()-getDiscountedTotal();
 	}
 	/**
 	 * 获取日期

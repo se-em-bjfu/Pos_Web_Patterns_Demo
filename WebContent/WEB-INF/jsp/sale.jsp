@@ -29,7 +29,7 @@
 		</form>
 		<a href="endSale.do">结束商品输入</a>
 		<p>已购商品折前总价:<fmt:formatNumber value="${sale.preDiscountTotal/100.0}" pattern="0.00" /></p>
-		<h2>已购商品折后总价:<fmt:formatNumber value="${sale.total /100.0}" pattern="0.00" /></h2>
+		<h2>已购商品折后总价:<fmt:formatNumber value="${sale.discountedTotal /100.0}" pattern="0.00" /></h2>
 		<p>折扣类型:${sale.pricingStrategy.name }</p>
 		<div id="itemList" >
 			<table border="1">

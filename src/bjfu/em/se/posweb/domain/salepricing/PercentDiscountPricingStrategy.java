@@ -14,7 +14,7 @@ public class PercentDiscountPricingStrategy implements ISalePricingStrategy {
 		this.percentage = percentage;
 	}
 	@Override
-	public int getTotal(Sale s) {
+	public int calculate(Sale s) {
 		return (int)(s.getPreDiscountTotal()*percentage);
 	}
 	@Override

@@ -64,7 +64,7 @@ public class Register {
 	 */
 	public int endSale(){
 		currentSale.becomeComplete();
-		return currentSale.getTotal();
+		return currentSale.getDiscountedTotal();
 	}
 	/**
 	 * 支付

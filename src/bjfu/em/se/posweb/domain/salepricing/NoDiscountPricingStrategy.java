@@ -10,7 +10,7 @@ import bjfu.em.se.posweb.domain.Sale;
 public class NoDiscountPricingStrategy implements ISalePricingStrategy {
 
 	@Override
-	public int getTotal(Sale s) {
+	public int calculate(Sale s) {
 		return s.getPreDiscountTotal();
 	}
 
