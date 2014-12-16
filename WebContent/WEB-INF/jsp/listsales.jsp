@@ -23,7 +23,7 @@
 				<td><fmt:formatDate value="${sale.date }" pattern="yy-MM-dd hh:mm" /></td>
 				<td><fmt:formatNumber value="${sale.preDiscountTotal /100.0}" pattern="0.00" /></td>
 				<td>${sale.pricingStrategy.name }</td>
-				<td><fmt:formatNumber value="${sale.total /100.0}" pattern="0.00" /></td>
+				<td><fmt:formatNumber value="${sale.discountedTotal /100.0}" pattern="0.00" /></td>
 				<td><fmt:formatNumber value="${sale.payment.amount /100.0}" pattern="0.00" /></td>
 				<td><a href="saleInfo.do?id=${status.index }">详情</a></td>
 			</tr>

@@ -14,7 +14,7 @@
 		<h1>销售记录详细信息</h1>
 		<a href="listSales.do">返回销售记录列表</a>
 		<p>折前总价:<fmt:formatNumber value="${sale.preDiscountTotal /100.0}" pattern="0.00" /></p>
-		<p>已购商品总价:<fmt:formatNumber value="${sale.total /100.0}" pattern="0.00" /></p>
+		<p>已购商品总价:<fmt:formatNumber value="${sale.discountedTotal /100.0}" pattern="0.00" /></p>
 		<p>折扣类型: ${sale.pricingStrategy.name } </p>
 		<p>支付金额:<fmt:formatNumber value="${sale.payment.amount /100.0}" pattern="0.00" /></p>
 		<div id="itemList" >
